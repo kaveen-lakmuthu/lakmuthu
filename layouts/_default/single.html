@@ -6,6 +6,9 @@
       {{ if .Params.case_id }}<span>CASE: {{ .Params.case_id }}</span> | {{ end }}
       {{ if .Params.status }}<span>STATUS: {{ .Params.status }}</span> | {{ end }}
       {{ if .Params.category }}<span>CATEGORY: {{ .Params.category }}</span>{{ end }}
+      {{ if eq .Section "investigations" }}
+        | <span>{{ .ReadingTime }} MIN READ</span> | <span>{{ .WordCount }} WORDS</span>
+      {{ end }}
     </div>
   {{ end }}
   <hr class="meta-hr">
