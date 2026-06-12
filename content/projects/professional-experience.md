@@ -1,23 +1,74 @@
 ---
+
 title: "Professional Experience"
-description: "A summary of commercial systems engineering and full-stack development achievements."
+description: "Summary of commercial software development and operational experience."
 category: "Commercial Work"
 status: "COMPLETED"
 github: "NDA Restricted"
-last_updated: "2026-04-10"
-date: "2026-04-10"
+last_updated: "2026-05-20"
+date: "2026-05-20"
+------------------
+
+This page summarizes professional software development experience in abstract terms. All descriptions are intentionally generalized to comply with non-disclosure agreements and confidentiality obligations.
+
+## Application Development
+
+Contributed to the development and maintenance of production software systems, including customer-facing applications and internal business tools.
+
+Responsibilities included:
+
+* Frontend and backend feature implementation
+* API development and integration
+* Request validation and business logic implementation
+* Application maintenance and bug fixing
+* Database interaction and data management
+* Third-party service integration
+
+Technologies included JavaScript/TypeScript ecosystems, Node.js-based services, relational and non-relational databases, and modern web application frameworks.
+
 ---
 
-A summary of commercial projects and systems software work described in abstract terms (fully compliant with non-disclosure agreements; no confidential information or client names are listed):
+## Infrastructure & Deployment
 
-### Web Applications & Backend Logic
-* **Details**: Contributed to customer-facing web applications to optimize performance and database interaction. Developed structured backend API routers, request validation handlers, and storage adapter modules.
-* **Stack**: Node.js, Go, REST/gRPC API structures.
+Participated in deployment, hosting, and operational maintenance activities for production systems.
 
-### Server Maintenance & Infrastructure
-* **Details**: Configured and maintained virtual server hosts (VPS), structured automated system backup scripts, established secure reverse proxy gateways, and maintained deployment pipelines.
-* **Stack**: Linux (Debian/Ubuntu), Docker, Nginx, Bash.
+Responsibilities included:
 
-### Technical Investigations & Diagnostics
-* **Details**: Acted as root-cause diagnostics responder. Investigated active staging and production environment issues, isolated memory leaks in daemon processes, and resolved deadlock locks.
-* **Stack**: GDB, strace, lsof, Valgrind log analyzers.
+* VPS configuration and maintenance
+* Application deployment
+* Deployment troubleshooting
+* Environment configuration and operational support
+
+Technologies included Linux, Docker, Nginx, SSH-based administration workflows, and cloud-hosted infrastructure.
+
+---
+
+## Integrations & Platform Services
+
+Worked with a variety of external services and platform providers to support application functionality.
+
+Examples included:
+
+* Authentication and OTP systems
+* Email delivery services
+* Payment gateway integrations
+* Cloud-hosted databases
+* Storage and application hosting platforms
+* Third-party APIs and service providers
+
+---
+
+## Technical Troubleshooting
+
+Investigated and resolved issues encountered during development, deployment, and production operation.
+
+Examples included:
+
+* Application failures
+* Deployment issues
+* Configuration conflicts
+* Environment-specific bugs
+* Service integration failures
+* Database and infrastructure-related issues
+
+This work frequently involved identifying root causes, validating hypotheses, and implementing corrective solutions to restore system functionality.

@@ -50,3 +50,10 @@ Examples include:
 
 The goal is not only to resolve the problem, but also to understand and document its root cause.
 
+---
+
+## Engagements
+
+I am available for freelance, contract, and project-based work involving software development, Linux environments, deployment workflows, and technical troubleshooting.
+
+If your project falls outside the areas listed above, feel free to get in touch. I may still be able to help or point you in the right direction.

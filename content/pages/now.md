@@ -7,10 +7,10 @@ description: "What I'm currently working on."
 
 Current areas of focus include:
 
+* Building custom 64 bit Operating System Kernel
+* Building custom river based window manager for Linux
+* Improving 5 Qubit Quantum Circuit Simulator
 * Learning assembly language
-* Operating system development
-* Systems programming in C and C++
-* Linux internals and tooling
 * Software reliability and debugging
 * Technical writing and investigations
 

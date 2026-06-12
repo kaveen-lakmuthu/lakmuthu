@@ -1,9 +1,9 @@
 ---
 title: "Case 000: Hello World"
-case_id: "CASE-000"
+case_id: "000"
 status: "WELCOME"
 category: "WELCOME"
-date: "2026-06-12"
+date: "2026-06-11"
 ---
 
 Welcome to the investigations log.
