@@ -48,5 +48,16 @@
   <div class="post-content">
     {{ .Content }}
   </div>
+
+  {{ if or (eq .Section "investigations") (eq .Section "projects") }}
+    <div class="post-footer">
+      <hr class="footer-hr">
+      {{ if eq .Section "investigations" }}
+        <a href="{{ "investigations/" | relURL }}" class="back-link">&larr; Back to Investigations</a>
+      {{ else if eq .Section "projects" }}
+        <a href="{{ "projects/" | relURL }}" class="back-link">&larr; Back to Projects</a>
+      {{ end }}
+    </div>
+  {{ end }}
 </article>
 {{ end }}

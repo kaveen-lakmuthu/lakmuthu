@@ -28,6 +28,9 @@
   <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
   <meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary }}{{ else }}{{ .Site.Title }}{{ end }}">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
   <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }} Feed" href="{{ "index.xml" | relURL }}">
   
@@ -57,13 +60,13 @@
       <a href="{{ "" | relURL }}">{{ .Site.Title }}</a>
     </div>
     <nav>
-      <a href="{{ "" | relURL }}">Home</a> |
-      <a href="{{ "about/" | relURL }}">About</a> |
-      <a href="{{ "services/" | relURL }}">Services</a> |
-      <a href="{{ "investigations/" | relURL }}">Investigations</a> |
-      <a href="{{ "projects/" | relURL }}">Projects</a> |
-      <a href="{{ "now/" | relURL }}">Now</a> |
-      <a href="{{ "contact/" | relURL }}">Contact</a> |
+      <a href="{{ "" | relURL }}"{{ if .IsHome }} class="active"{{ end }}>Home</a> |
+      <a href="{{ "about/" | relURL }}"{{ if eq .RelPermalink ("/about/" | relURL) }} class="active"{{ end }}>About</a> |
+      <a href="{{ "services/" | relURL }}"{{ if eq .RelPermalink ("/services/" | relURL) }} class="active"{{ end }}>Services</a> |
+      <a href="{{ "investigations/" | relURL }}"{{ if or (eq .Section "investigations") (eq .RelPermalink ("/investigations/" | relURL)) }} class="active"{{ end }}>Investigations</a> |
+      <a href="{{ "projects/" | relURL }}"{{ if or (eq .Section "projects") (eq .RelPermalink ("/projects/" | relURL)) }} class="active"{{ end }}>Projects</a> |
+      <a href="{{ "now/" | relURL }}"{{ if eq .RelPermalink ("/now/" | relURL) }} class="active"{{ end }}>Now</a> |
+      <a href="{{ "contact/" | relURL }}"{{ if eq .RelPermalink ("/contact/" | relURL) }} class="active"{{ end }}>Contact</a> |
       <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle-btn">&#9790;</button>
     </nav>
   </header>

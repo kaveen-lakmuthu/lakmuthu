@@ -1,7 +1,7 @@
 :root {
   /* Font Families */
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  --font-mono: ui-monospace, SFMono-Regular, SF Mono, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, SF Mono, Menlo, Monaco, Consolas, monospace;
 
   /* Colors - Light Theme Default */
   --bg: #ffffff;
@@ -113,11 +113,18 @@ nav a {
   text-decoration: none;
   color: var(--link);
   padding: 0.1rem 0.3rem;
+  border-bottom: 2px solid transparent;
 }
 
 nav a:hover {
   color: var(--link-hover);
-  text-decoration: underline;
+  border-bottom: 2px solid var(--link-hover);
+}
+
+nav a.active {
+  color: var(--text);
+  font-weight: 500;
+  border-bottom: 2px solid var(--text);
 }
 
 hr {
@@ -380,6 +387,29 @@ footer a:hover {
   background-color: var(--code-bg);
 }
 
+/* Post footer navigation */
+.post-footer {
+  margin-top: 3rem;
+}
+
+.footer-hr {
+  border: 0;
+  border-top: 1px dashed var(--border);
+  margin-bottom: 1.5rem;
+}
+
+.back-link {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--link);
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
 /* Print Stylesheet */
 @media print {
   body {
@@ -391,7 +421,7 @@ footer a:hover {
     margin: 1.5cm;
   }
 
-  header, footer, hr, .theme-toggle-btn, .homepage-actions, .status-badge-inline {
+  header, footer, hr, .theme-toggle-btn, .homepage-actions, .status-badge-inline, .post-footer {
     display: none !important;
   }
 
