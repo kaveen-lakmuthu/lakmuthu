@@ -248,12 +248,23 @@ pre code {
 /* Single page posts metadata */
 .post-meta {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+}
+
+.meta-item:not(:last-child)::after {
+  content: "|";
+  margin-left: 0.8rem;
+  color: var(--border);
 }
 
 /* Footer layout */
