@@ -1,6 +1,5 @@
 :root {
   /* Font Families */
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, SF Mono, Menlo, Monaco, Consolas, monospace;
 
   /* Colors - Light Theme Default */
@@ -77,9 +76,9 @@
 body {
   background-color: var(--bg);
   color: var(--text);
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   line-height: 1.6;
-  font-size: 16px;
+  font-size: 15px;
   max-width: 680px;
   margin: 0 auto;
   padding: 2.5rem 1.5rem;
@@ -106,25 +105,42 @@ header {
 }
 
 nav {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 nav a {
   text-decoration: none;
   color: var(--link);
-  padding: 0.1rem 0.3rem;
-  border-bottom: 2px solid transparent;
+  padding: 0.1rem 0;
+  margin-right: 0.45rem;
+  display: inline-flex;
+  align-items: center;
 }
 
-nav a:hover {
+nav a span {
+  border-bottom: 2px solid transparent;
+  padding-bottom: 0.1rem;
+}
+
+nav a:hover span {
   color: var(--link-hover);
   border-bottom: 2px solid var(--link-hover);
 }
 
-nav a.active {
+nav a.active span {
   color: var(--text);
   font-weight: 500;
   border-bottom: 2px solid var(--text);
+}
+
+nav a::after {
+  content: "|";
+  margin-left: 0.45rem;
+  color: var(--border);
+  font-weight: normal;
 }
 
 hr {
@@ -174,8 +190,11 @@ li {
 }
 
 /* Code & preformatted block settings */
-code {
+code, pre {
   font-family: var(--font-mono);
+}
+
+code {
   font-size: 0.88em;
   background-color: var(--code-bg);
   color: var(--code-text);
@@ -376,7 +395,7 @@ footer a:hover {
   cursor: pointer;
   padding: 0.1rem 0.4rem;
   font-size: 0.95rem;
-  margin-left: 0.8rem;
+  margin-left: 0.2rem;
   vertical-align: middle;
   border-radius: 4px;
   line-height: 1;

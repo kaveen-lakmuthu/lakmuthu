@@ -37,7 +37,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
   <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }} Feed" href="{{ "index.xml" | relURL }}">
@@ -69,13 +69,13 @@
       <a href="{{ "" | relURL }}">{{ .Site.Title }}</a>
     </div>
     <nav>
-      <a href="{{ "" | relURL }}"{{ if .IsHome }} class="active"{{ end }}>Home</a> |
-      <a href="{{ "about/" | relURL }}"{{ if eq .RelPermalink ("/about/" | relURL) }} class="active"{{ end }}>About</a> |
-      <a href="{{ "services/" | relURL }}"{{ if eq .RelPermalink ("/services/" | relURL) }} class="active"{{ end }}>Services</a> |
-      <a href="{{ "investigations/" | relURL }}"{{ if or (eq .Section "investigations") (eq .RelPermalink ("/investigations/" | relURL)) }} class="active"{{ end }}>Investigations</a> |
-      <a href="{{ "projects/" | relURL }}"{{ if or (eq .Section "projects") (eq .RelPermalink ("/projects/" | relURL)) }} class="active"{{ end }}>Projects</a> |
-      <a href="{{ "now/" | relURL }}"{{ if eq .RelPermalink ("/now/" | relURL) }} class="active"{{ end }}>Now</a> |
-      <a href="{{ "contact/" | relURL }}"{{ if eq .RelPermalink ("/contact/" | relURL) }} class="active"{{ end }}>Contact</a> |
+      <a href="{{ "" | relURL }}"{{ if .IsHome }} class="active"{{ end }}><span>Home</span></a>
+      <a href="{{ "about/" | relURL }}"{{ if eq .RelPermalink ("/about/" | relURL) }} class="active"{{ end }}><span>About</span></a>
+      <a href="{{ "services/" | relURL }}"{{ if eq .RelPermalink ("/services/" | relURL) }} class="active"{{ end }}><span>Services</span></a>
+      <a href="{{ "investigations/" | relURL }}"{{ if or (eq .Section "investigations") (eq .RelPermalink ("/investigations/" | relURL)) }} class="active"{{ end }}><span>Investigations</span></a>
+      <a href="{{ "projects/" | relURL }}"{{ if or (eq .Section "projects") (eq .RelPermalink ("/projects/" | relURL)) }} class="active"{{ end }}><span>Projects</span></a>
+      <a href="{{ "now/" | relURL }}"{{ if eq .RelPermalink ("/now/" | relURL) }} class="active"{{ end }}><span>Now</span></a>
+      <a href="{{ "contact/" | relURL }}"{{ if eq .RelPermalink ("/contact/" | relURL) }} class="active"{{ end }}><span>Contact</span></a>
       <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle-btn">&#9790;</button>
     </nav>
   </header>
