@@ -1,0 +1,12 @@
+baseURL = '/'
+languageCode = 'en-us'
+title = 'Kaveen Lakmuthu'
+disableKinds = ['taxonomy', 'term', 'RSS']
+
+[permalinks]
+  pages = '/:filename/'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

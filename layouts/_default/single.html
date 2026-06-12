@@ -1,0 +1,16 @@
+{{ define "main" }}
+<article class="post">
+  <h1>{{ .Title }}</h1>
+  {{ if or (eq .Section "investigations") (eq .Section "projects") }}
+    <div class="post-meta">
+      {{ if .Params.case_id }}<span>CASE: {{ .Params.case_id }}</span> | {{ end }}
+      {{ if .Params.status }}<span>STATUS: {{ .Params.status }}</span> | {{ end }}
+      {{ if .Params.category }}<span>CATEGORY: {{ .Params.category }}</span>{{ end }}
+    </div>
+  {{ end }}
+  <hr class="meta-hr">
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}

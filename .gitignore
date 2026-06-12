@@ -1,0 +1,14 @@
+# Hugo build directory
+/public/
+/resources/_gen/
+
+# Local binaries and locks
+/bin/
+.hugo_build.lock
+
+# Node dependencies (if any legacy)
+node_modules/
+
+# OS generated files
+.DS_Store
+Thumbs.db
