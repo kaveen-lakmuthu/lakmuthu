@@ -1,7 +1,11 @@
 ---
 title: "Custom Systems & Kernel Utilities"
+description: "A collection of low-level systems utilities, custom operating system stubs, and kernel probe scripts."
 category: "Personal Systems Project"
 status: "ONGOING"
+github: "https://github.com/kaveen-lakmuthu/system-tool"
+last_updated: "2026-06-01"
+date: "2026-06-01"
 ---
 
 A collection of low-level systems utilities, custom operating system stubs, and kernel probe scripts:

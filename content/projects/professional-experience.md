@@ -1,7 +1,11 @@
 ---
 title: "Professional Experience"
+description: "A summary of commercial systems engineering and full-stack development achievements."
 category: "Commercial Work"
 status: "COMPLETED"
+github: "NDA Restricted"
+last_updated: "2026-04-10"
+date: "2026-04-10"
 ---
 
 A summary of commercial projects and systems software work described in abstract terms (fully compliant with non-disclosure agreements; no confidential information or client names are listed):

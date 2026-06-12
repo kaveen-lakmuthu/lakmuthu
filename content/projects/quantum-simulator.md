@@ -1,7 +1,11 @@
 ---
 title: "Quantum Simulator"
+description: "A lightweight simulation engine for qubit states and gate transformations."
 category: "Personal Systems Project"
 status: "ACTIVE"
+github: "https://github.com/kaveen-lakmuthu/quantum-simulator"
+last_updated: "2026-05-15"
+date: "2026-05-15"
 ---
 
 A lightweight simulation engine for qubit states, gate transformations (Hadamard, CNOT, Pauli X/Y/Z), and superposition probability measurements.

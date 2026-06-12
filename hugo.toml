@@ -1,7 +1,7 @@
 baseURL = '/'
 languageCode = 'en-us'
 title = 'Kaveen Lakmuthu'
-disableKinds = ['taxonomy', 'term', 'RSS']
+disableKinds = ['taxonomy', 'term']
 
 [permalinks]
   pages = '/:filename/'

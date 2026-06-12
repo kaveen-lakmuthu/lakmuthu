@@ -9,6 +9,38 @@
     </div>
   {{ end }}
   <hr class="meta-hr">
+  {{ if eq .Section "projects" }}
+    <div class="project-info-grid">
+      {{ if .Description }}
+      <div class="project-info-item">
+        <span class="project-info-label">Description</span>
+        <span class="project-info-val">{{ .Description }}</span>
+      </div>
+      {{ end }}
+      <div class="project-info-item">
+        <span class="project-info-label">GitHub Repository</span>
+        <span class="project-info-val">
+          {{ if .Params.github }}
+            {{ if eq .Params.github "NDA Restricted" }}
+              <span class="nda-badge">NDA Restricted</span>
+            {{ else }}
+              <a href="{{ .Params.github }}" target="_blank" rel="noopener noreferrer">{{ replace .Params.github "https://" "" }}</a>
+            {{ end }}
+          {{ else }}
+            <span>N/A</span>
+          {{ end }}
+        </span>
+      </div>
+      <div class="project-info-item">
+        <span class="project-info-label">Last Updated</span>
+        <span class="project-info-val">{{ if .Params.last_updated }}{{ .Params.last_updated }}{{ else if .Date }}{{ .Date.Format "2006-01-02" }}{{ else }}N/A{{ end }}</span>
+      </div>
+      <div class="project-info-item">
+        <span class="project-info-label">Status</span>
+        <span class="project-info-val"><span class="status-badge-inline">[{{ .Params.status | default "UNKNOWN" }}]</span></span>
+      </div>
+    </div>
+  {{ end }}
   <div class="post-content">
     {{ .Content }}
   </div>

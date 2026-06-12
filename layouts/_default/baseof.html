@@ -4,8 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
-  <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else if .IsPage }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary }}{{ else }}{{ .Site.Title }}{{ end }}">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
+  <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary }}{{ else }}{{ .Site.Title }}{{ end }}">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="{{ .Permalink }}">
+  <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
+  <meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary }}{{ else }}{{ .Site.Title }}{{ end }}">
+
   <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }} Feed" href="{{ "index.xml" | relURL }}">
 </head>
 <body>
   <header>
@@ -28,7 +42,7 @@
   </main>
   <hr>
   <footer>
-    <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}. All rights reserved. | <a href="{{ "contact/" | relURL }}">Contact</a> | <a href="{{ "now/" | relURL }}">Now</a></p>
+    <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}. All rights reserved. | <a href="{{ "contact/" | relURL }}">Contact</a> | <a href="{{ "now/" | relURL }}">Now</a> | <a href="{{ "index.xml" | relURL }}">RSS</a></p>
   </footer>
 </body>
 </html>

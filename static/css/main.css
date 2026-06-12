@@ -277,3 +277,43 @@ footer a:hover {
   width: 120px;
   flex-shrink: 0;
 }
+
+/* Project Metadata Block */
+.project-info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding: 1.2rem;
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.project-info-item {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.project-info-label {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  width: 160px;
+  flex-shrink: 0;
+}
+
+.project-info-val {
+  font-size: 0.9rem;
+}
+
+.nda-badge {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
