@@ -3,83 +3,110 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KERNEL PANIC: Route Not Found | 404</title>
+  <title>ERROR 404: Route Not Found</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #000000;
-      color: #ff3333;
-      font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      padding: 3rem 1.5rem;
-      max-width: 800px;
+      background-color: #0f141c; /* match website dark theme background */
+      color: #cbd5e1;
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, SF Mono, Menlo, Monaco, Consolas, monospace;
+      padding: 4rem 1.5rem;
+      max-width: 680px;
       margin: 0 auto;
-      line-height: 1.5;
+      line-height: 1.6;
     }
-    h1 {
-      font-size: 1.8rem;
-      border-bottom: 2px solid #ff3333;
-      padding-bottom: 0.5rem;
-      margin-bottom: 2rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+    .command-line {
+      color: #4ade80; /* prompt green */
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+    .command-line::before {
+      content: "kaveen-lakmuthu@portfolio:~$ ";
+      color: #60a5fa; /* prompt blue */
     }
     .log-line {
+      color: #8b949e; /* match website text-muted */
+      font-size: 0.85rem;
       margin-bottom: 0.4rem;
-      color: #e1e4e8;
     }
     .log-line span.time {
+      color: #475569;
+      margin-right: 0.5rem;
+    }
+    .error-block {
+      margin: 2.5rem 0;
+      border-top: 1px dashed #30363d; /* match website dashed border */
+      border-bottom: 1px dashed #30363d;
+      padding: 2rem 0;
+    }
+    .error-code {
+      font-size: 5rem;
+      font-weight: 800;
+      color: #fb923c; /* soft orange/amber 404 */
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    .error-message {
+      font-size: 1.2rem;
+      color: #e1e4e8; /* match website main text */
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .diag-title {
+      margin-top: 2.5rem;
+      color: #e1e4e8;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-bottom: 1px solid #30363d; /* match website solid border */
+      padding-bottom: 0.4rem;
+      margin-bottom: 1rem;
+    }
+    .diag-line {
+      font-size: 0.88rem;
+      margin-bottom: 0.6rem;
       color: #8b949e;
     }
-    .log-line span.error {
-      color: #ff3333;
-      font-weight: bold;
-    }
-    .actions {
-      margin-top: 3rem;
-      border-top: 1px dashed #30363d;
-      padding-top: 1.5rem;
-    }
-    ul {
-      padding-left: 1.5rem;
-    }
-    li {
-      margin-bottom: 0.5rem;
-      color: #e1e4e8;
-    }
-    a {
-      color: #58a6ff;
+    .diag-line a {
+      color: #58a6ff; /* match website link color */
       text-decoration: none;
       font-weight: bold;
     }
-    a:hover {
+    .diag-line a:hover {
       text-decoration: underline;
+      color: #8cc2ff; /* match website link hover color */
     }
   </style>
 </head>
 <body>
-  <h1>[    0.000000] Kernel Panic - not syncing: VFS: Unable to mount root fs on unknown-block(404,0)</h1>
+  <div class="command-line">web-request --get <span id="request-path">/404.html</span></div>
+  <div class="log-line"><span class="time">[    0.000000]</span> Requesting route target...</div>
+  <div class="log-line"><span class="time">[    0.000215]</span> VFS: Checking mapping tables...</div>
   
-  <div class="log-line"><span class="time">[    0.000404]</span> <span class="error">HTTP ERROR: 404 (Page Not Found)</span></div>
-  <div class="log-line"><span class="time">[    0.000405]</span> CPU: 0 PID: 1 Comm: swapper/0 Not tainted 6.1.0-sys-kaveen #1</div>
-  <div class="log-line"><span class="time">[    0.000406]</span> Hardware name: Kaveen Lakmuthu Portfolio VPS node</div>
-  <div class="log-line"><span class="time">[    0.000407]</span> Call Trace:</div>
-  <div class="log-line"><span class="time">[    0.000408]</span>  dump_stack_lvl+0x44/0x5c</div>
-  <div class="log-line"><span class="time">[    0.000409]</span>  panic+0x118/0x2f4</div>
-  <div class="log-line"><span class="time">[    0.000410]</span>  mount_block_root+0x144/0x1e8</div>
-  <div class="log-line"><span class="time">[    0.000411]</span>  mount_root+0x38/0x3c</div>
-  <div class="log-line"><span class="time">[    0.000412]</span>  prepare_namespace+0x13c/0x17c</div>
-  <div class="log-line"><span class="time">[    0.000413]</span>  kernel_init_freeable+0x238/0x280</div>
-  <div class="log-line"><span class="time">[    0.000414]</span>  kernel_init+0x18/0x130</div>
-  <div class="log-line"><span class="time">[    0.000415]</span>  ret_from_fork+0x1f/0x30</div>
-  
-  <div class="log-line" style="margin-top: 1.5rem;"><span class="time">[    0.000416]</span> ---[ end Kernel panic - not syncing: VFS: Requested route '{{ .Page.RelPermalink | default "404" }}' does not map to any compiled static HTML targets. ]---</div>
-
-  <div class="actions">
-    <p>Run diagnostic reboot to main targets:</p>
-    <ul>
-      <li><a href="{{ "" | relURL }}">Go back to Homepage (/)</a></li>
-      <li><a href="{{ "investigations/" | relURL }}">View Investigations (/investigations/)</a></li>
-      <li><a href="{{ "projects/" | relURL }}">View Projects (/projects/)</a></li>
-    </ul>
+  <div class="error-block">
+    <div class="error-code">404</div>
+    <div class="error-message">Page Not Found</div>
   </div>
+  
+  <div class="log-line"><span class="time">[    0.000404]</span> <span style="color: #f87171; font-weight: bold;">ERROR:</span> Requested route '<span id="error-path">/404.html</span>' does not map to any compiled static HTML targets.</div>
+  <div class="log-line"><span class="time">[    0.000405]</span> panic: Unable to resolve route (VFS mount failure).</div>
+  
+  <div class="diag-title">Run diagnostic reboot to main targets:</div>
+  <div class="diag-line">kaveen-lakmuthu@portfolio:~$ goto / --action=<a href="{{ "" | relURL }}">execute</a></div>
+  <div class="diag-line">kaveen-lakmuthu@portfolio:~$ goto /investigations --action=<a href="{{ "investigations/" | relURL }}">execute</a></div>
+  <div class="diag-line">kaveen-lakmuthu@portfolio:~$ goto /projects --action=<a href="{{ "projects/" | relURL }}">execute</a></div>
+
+  <script>
+    (function () {
+      const path = window.location.pathname;
+      if (path && path !== '/404.html') {
+        document.getElementById('request-path').textContent = path;
+        document.getElementById('error-path').textContent = path;
+      }
+    })();
+  </script>
 </body>
 </html>
