@@ -4,11 +4,15 @@
 <head>
   <script>
     (function () {
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else if (savedTheme === 'light') {
-        document.documentElement.classList.add('light');
+      try {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else if (savedTheme === 'light') {
+          document.documentElement.classList.add('light');
+        }
+      } catch (e) {
+        console.warn('localStorage is blocked or unavailable:', e);
       }
     })();
   </script>
@@ -94,7 +98,11 @@
       const getTheme = () => {
         if (root.classList.contains('dark')) return 'dark';
         if (root.classList.contains('light')) return 'light';
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        try {
+          return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        } catch (e) {
+          return 'light';
+        }
       };
 
       const updateButton = (theme) => {
@@ -109,12 +117,20 @@
         if (currentTheme === 'dark') {
           root.classList.remove('dark');
           root.classList.add('light');
-          localStorage.setItem('theme', 'light');
+          try {
+            localStorage.setItem('theme', 'light');
+          } catch (e) {
+            console.warn('localStorage is blocked or unavailable:', e);
+          }
           updateButton('light');
         } else {
           root.classList.remove('light');
           root.classList.add('dark');
-          localStorage.setItem('theme', 'dark');
+          try {
+            localStorage.setItem('theme', 'dark');
+          } catch (e) {
+            console.warn('localStorage is blocked or unavailable:', e);
+          }
           updateButton('dark');
         }
       });
