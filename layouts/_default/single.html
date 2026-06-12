@@ -1,18 +1,20 @@
 {{ define "main" }}
 <article class="post">
-  <h1>{{ .Title }}</h1>
-  {{ if or (eq .Section "investigations") (eq .Section "projects") }}
-    <div class="post-meta">
-      {{ if .Params.case_id }}<span class="meta-item">CASE: {{ .Params.case_id }}</span>{{ end }}
-      {{ if .Params.status }}<span class="meta-item">STATUS: {{ .Params.status }}</span>{{ end }}
-      {{ if .Params.category }}<span class="meta-item">CATEGORY: {{ .Params.category }}</span>{{ end }}
-      {{ if eq .Section "investigations" }}
-        <span class="meta-item">{{ .ReadingTime }} MIN READ</span>
-        <span class="meta-item">{{ .WordCount }} WORDS</span>
-      {{ end }}
-    </div>
+  {{ if ne .Section "pages" }}
+    <h1>{{ .Title }}</h1>
+    {{ if or (eq .Section "investigations") (eq .Section "projects") }}
+      <div class="post-meta">
+        {{ if .Params.case_id }}<span class="meta-item">CASE: {{ .Params.case_id }}</span>{{ end }}
+        {{ if .Params.status }}<span class="meta-item">STATUS: {{ .Params.status }}</span>{{ end }}
+        {{ if .Params.category }}<span class="meta-item">CATEGORY: {{ .Params.category }}</span>{{ end }}
+        {{ if eq .Section "investigations" }}
+          <span class="meta-item">{{ .ReadingTime }} MIN READ</span>
+          <span class="meta-item">{{ .WordCount }} WORDS</span>
+        {{ end }}
+      </div>
+    {{ end }}
+    <hr class="meta-hr">
   {{ end }}
-  <hr class="meta-hr">
   {{ if eq .Section "projects" }}
     <div class="project-info-grid">
       {{ if .Description }}
